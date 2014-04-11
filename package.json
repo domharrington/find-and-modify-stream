@@ -1,0 +1,32 @@
+{
+  "name": "find-and-modify-stream",
+  "version": "0.0.0",
+  "description": "MongoDB find and modify object write stream",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/jshint .",
+    "pretest": "npm run-script lint",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "prepublish": "npm test && npm prune"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "stream",
+    "write",
+    "stream",
+    "find",
+    "and",
+    "modify"
+  ],
+  "author": "Dom Harrington",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "mongodb": "^1.4.0",
+    "lodash.omit": "^2.4.1",
+    "istanbul": "^0.2.7",
+    "jshint": "^2.5.0"
+  }
+}
