@@ -1,6 +1,6 @@
 {
   "name": "find-and-modify-stream",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "MongoDB find and modify object write stream",
   "main": "index.js",
   "publishConfig": {
