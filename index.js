@@ -12,6 +12,7 @@ function FindAndModifyMongoStream(options) {
   this.collection = options.connection.collection(options.collection)
 
   this.query = options.query || function (obj) { return { _id: obj._id }}
+  this.queryOptions = options.queryOptions || { upsert: true, w: 1, fsync: true }
 }
 
 FindAndModifyMongoStream.prototype = Object.create(Writable.prototype)
@@ -24,6 +25,6 @@ FindAndModifyMongoStream.prototype._write = function (obj, encoding, cb) {
   }
 
   this.collection.findAndModify(
-    this.query(obj), [], obj, { upsert: true, w: 1, fsync: true }, done.bind(this))
+    this.query(obj), [], obj, this.queryOptions, done.bind(this))
 
 }
