@@ -41,6 +41,8 @@ Options must include:
 Optional options:
 
 - `query` - a function used to construct the query for the `findAndModify` operation. Defaults to: `function (obj) { return { _id: obj._id }}`
+- `queryOptions` - an object of options passed to the `findAndModify` operation. Can be used to modify write concerns and upsert preferences.
+Defaults to: `{ upsert: true, w: 1, fsync: true }`
 
 ## Credits
 [Dom Harrington](https://github.com/domharrington/) follow me on twitter [@domharrington](http://twitter.com/domharrington)
