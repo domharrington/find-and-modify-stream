@@ -105,4 +105,22 @@ describe('find and modify mongo stream', function () {
     stream.end()
   })
 
+  it('should allow overriding of query options', function (done) {
+    var queryOptions = { upsert: false }
+      , stream = new FindAndModifyMongoStream({ connection: connection
+        , collection: collectionName, queryOptions: queryOptions })
+      , newObject = { _id: 'new-id', c: 3 }
+
+    stream.on('finish', function () {
+      collection.findOne({ _id: 'new-id' }, function (err, doc) {
+        assert.equal(doc, null)
+        done()
+      })
+    })
+
+    stream.write(newObject)
+    stream.end()
+
+  })
+
 })
