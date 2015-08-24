@@ -31,5 +31,9 @@
     "lodash.omit": "^2.4.1",
     "istanbul": "^0.2.7",
     "jshint": "^2.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:domharrington/find-and-modify-stream.git"
   }
 }
